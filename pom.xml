@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -10,7 +9,7 @@
 
   <groupId>org.bitrepository</groupId>
   <artifactId>bitrepository-collection-settings</artifactId>
-  <version>0.2.1-SNAPSHOT</version>
+  <version>0.2.1</version>
   <name>Bitrepository collection settings</name>
   <description>Contains the standard settings used to define a Bit Repository Collection</description>
 
@@ -18,14 +17,14 @@
     <dependency>
       <groupId>org.bitrepository</groupId>
       <artifactId>bitrepository-message-xml</artifactId>
-      <version>0.3.1-SNAPSHOT</version>
+      <version>0.3.2</version>
     </dependency>
   </dependencies>
 
   <scm>
-    <connection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-collection-settings/trunk/</connection>
-    <developerConnection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-collection-settings/</developerConnection>
-    <url>https://sbforge.org/fisheye/browse/Bitmagasinet/bitrepository-collection-settings/trunk/</url>
+    <connection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-collection-settings/tags/bitrepository-collection-settings-0.2.1</connection>
+    <developerConnection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-collection-settings/tags/bitrepository-collection-settings-0.2.1</developerConnection>
+    <url>https://sbforge.org/fisheye/browse/Bitmagasinet/bitrepository-collection-settings/tags/bitrepository-collection-settings-0.2.1</url>
   </scm>
 
   <distributionManagement>
