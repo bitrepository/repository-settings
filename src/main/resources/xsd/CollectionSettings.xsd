@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<xs:schema targetNamespace="http://bitrepository.org/settings/CollectionSettings.xsd"
-  attributeFormDefault="unqualified" elementFormDefault="qualified"
+<xs:schema targetNamespace="http://bitrepository.org/settings/${project.version}/CollectionSettings.xsd"
+  attributeFormDefault="unqualified" elementFormDefault="qualified" 
 
-  xmlns="http://bitrepository.org/settings/CollectionSettings.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://bitrepository.org/settings/${project.version}/CollectionSettings.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
 
   <xs:element name="CollectionSettings">
@@ -16,7 +16,7 @@
       <xs:sequence minOccurs="0" maxOccurs="1">
         <xs:element name="CollectionID" type="xs:string" minOccurs="1" maxOccurs="1">
           <xs:annotation><xs:documentation xml:lang="en">
-            The ID for the BitRepositoryCollection
+            The ID for the Collection
           </xs:documentation></xs:annotation>
         </xs:element>
         <xs:element ref="ProtocolSettings" />
@@ -40,6 +40,13 @@
         <xs:documentation>The settings for the protocol</xs:documentation>
       </xs:annotation>
       <xs:sequence>
+        <xs:element name="DefaultChecksumType" type="xs:string">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Default checksum used in the collection.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>    
         <xs:element name="CollectionDestination" type="xs:string">
           <xs:annotation>
             <xs:documentation xml:lang="en">
