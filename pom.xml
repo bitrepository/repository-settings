@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.sbforge</groupId>
     <artifactId>sbforge-parent</artifactId>
-    <version>8</version>
+    <version>10</version>
   </parent>
 
   <groupId>org.bitrepository</groupId>
@@ -25,6 +25,19 @@
       <url>dav:https://sbforge.org/maven/bitrepository/sites/collection-settings/${project.version}</url>
     </site>
   </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>sbforge-nexus</id>
+      <url>https://sbforge.org/nexus/content/groups/public</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
 
   <build>
     <resources>

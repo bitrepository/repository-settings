@@ -62,16 +62,73 @@
             </xs:documentation>
           </xs:annotation>
         </xs:element>
+        <xs:element ref="Certificates" />
         <xs:element ref="Permissions" />
         <xs:element ref="MessageBusConfiguration" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
+  <xs:element name="Certificates">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          Contains the file exchange and message bus certificates to use for this collection.
+          The elements must be stored as base64 encoded X509 certificates.
+        </xs:documentation>
+      </xs:annotation>
+      <xs:sequence minOccurs="0" maxOccurs="1">
+        <xs:element ref="FileExchangeServerCertificates"/>
+        <xs:element ref="MessageBusCertificates"/>
+        <xs:element ref="ClientCertificates"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="FileExchangeServerCertificates">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          The set of certificates which the file exchange server clients should trust.
+        </xs:documentation>
+      </xs:annotation>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element name="FileExchangeServerCertificate" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="MessageBusCertificates">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          The set of certificates which the message bus clients should trust.
+        </xs:documentation>
+      </xs:annotation>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element name="MessageBusCertificate" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="ClientCertificates">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          The set of certificates the message bus and file exchange servers should trust.
+        </xs:documentation>
+      </xs:annotation>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element name="ClientCertificate" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
   <xs:element name="Permissions">
     <xs:complexType>
       <xs:annotation>
         <xs:documentation xml:lang="en">
-          The set of certificates to use for this collection. Format
+          The set of permissions to use for this collection. Format
           definition pending.
         </xs:documentation>
       </xs:annotation>
@@ -90,10 +147,11 @@
         </xs:documentation>
       </xs:annotation>
       <xs:sequence>
-        <xs:element name="User" type="xs:string">
+        <xs:element name="Certificate" type="xs:string">
           <xs:annotation>
             <xs:documentation xml:lang="en">
-              The user this permission is defined for.
+              The certificate used to identify the user with the specified permission.
+              The elements must be stored as base64 encoded X509 certificates.
             </xs:documentation>
           </xs:annotation>
         </xs:element>
