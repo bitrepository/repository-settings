@@ -13,6 +13,14 @@
   <name>Bitrepository collection settings</name>
   <description>Contains the standard settings used to define a Bit Repository Collection</description>
 
+  <licenses>
+    <license>
+      <name>LGPL v2.1</name>
+      <distribution>repo</distribution>
+      <url>http://www.gnu.org/licenses/lgpl-2.1.txt</url>
+    </license>
+  </licenses>
+
   <scm>
     <connection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-collection-settings/trunk/</connection>
     <developerConnection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-collection-settings/</developerConnection>

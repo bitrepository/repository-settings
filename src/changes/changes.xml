@@ -6,7 +6,7 @@
   </properties>
   <body>
     <release version="0.3.2" date="2011-11-XX" description="">
-      <action dev="" type=""> 
+      <action dev="Mikis" type="Added certificate definitions"> 
       </action>
     </release>
   </body>
