@@ -9,7 +9,7 @@
 
   <groupId>org.bitrepository</groupId>
   <artifactId>bitrepository-collection-settings</artifactId>
-  <version>0.3.2</version>
+  <version>0.4-SNAPSHOT</version>
   <name>Bitrepository collection settings</name>
   <description>Contains the standard settings used to define a Bit Repository Collection</description>
 
@@ -22,9 +22,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-collection-settings/tags/bitrepository-collection-settings-0.3.2</connection>
-    <developerConnection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-collection-settings/tags/bitrepository-collection-settings-0.3.2</developerConnection>
-    <url>https://sbforge.org/fisheye/browse/Bitmagasinet/bitrepository-collection-settings/tags/bitrepository-collection-settings-0.3.2</url>
+    <connection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-collection-settings/trunk/</connection>
+    <developerConnection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-collection-settings/</developerConnection>
+    <url>https://sbforge.org/fisheye/browse/Bitmagasinet/bitrepository-collection-settings/trunk/</url>
   </scm>
 
   <distributionManagement>
