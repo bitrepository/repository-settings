@@ -22,9 +22,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-collection-settings/trunk/</connection>
-    <developerConnection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-collection-settings/</developerConnection>
-    <url>https://sbforge.org/fisheye/browse/Bitmagasinet/bitrepository-collection-settings/trunk/</url>
+    <connection>scm:git:http://sbforge.org/fisheye/git/bitrepository-collection-settings.git</connection>
+    <developerConnection>scm:git:https://sbforge.org/fisheye/git/bitrepository-collection-settings.git</developerConnection>
+    <url>https://sbforge.org/fisheye/browse/bitrepository-collection-settings</url>
   </scm>
 
   <distributionManagement>
