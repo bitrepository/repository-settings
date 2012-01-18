@@ -30,6 +30,7 @@
         <xs:element ref="GetStatusSettings" />
         <xs:element ref="PutFileSettings" />
         <xs:element ref="ReplaceFileSettings" />
+        <xs:element ref="PermissionSet" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -62,137 +63,9 @@
             </xs:documentation>
           </xs:annotation>
         </xs:element>
-        <xs:element ref="Certificates" />
-        <xs:element ref="Permissions" />
         <xs:element ref="MessageBusConfiguration" />
       </xs:sequence>
     </xs:complexType>
-  </xs:element>
-
-  <xs:element name="Certificates">
-    <xs:complexType>
-      <xs:annotation>
-        <xs:documentation xml:lang="en">
-          Contains the file exchange and message bus certificates to use for this collection.
-          The elements must be stored as base64 encoded X509 certificates.
-        </xs:documentation>
-      </xs:annotation>
-      <xs:sequence minOccurs="0" maxOccurs="1">
-        <xs:element ref="FileExchangeServerCertificates"/>
-        <xs:element ref="MessageBusCertificates"/>
-        <xs:element ref="ClientCertificates"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:element name="FileExchangeServerCertificates">
-    <xs:complexType>
-      <xs:annotation>
-        <xs:documentation xml:lang="en">
-          The set of certificates which the file exchange server clients should trust.
-        </xs:documentation>
-      </xs:annotation>
-      <xs:sequence minOccurs="1" maxOccurs="unbounded">
-        <xs:element ref="Certificate"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:element name="MessageBusCertificates">
-    <xs:complexType>
-      <xs:annotation>
-        <xs:documentation xml:lang="en">
-          The set of certificates which the message bus clients should trust.
-        </xs:documentation>
-      </xs:annotation>
-      <xs:sequence minOccurs="1" maxOccurs="unbounded">
-        <xs:element ref="Certificate"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:element name="ClientCertificates">
-    <xs:complexType>
-      <xs:annotation>
-        <xs:documentation xml:lang="en">
-          The set of certificates the message bus and file exchange servers should trust.
-        </xs:documentation>
-      </xs:annotation>
-      <xs:sequence minOccurs="1" maxOccurs="unbounded">
-        <xs:element ref="Certificate"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:element name="Certificate">
-    <xs:simpleType>
-      <xs:annotation><xs:documentation xml:lang="en">
-          Encapsulates a single base64 encoded X509 certificate.
-      </xs:documentation></xs:annotation>
-    <xs:restriction base="xs:base64Binary"/>
-    </xs:simpleType>
-  </xs:element>
-  
-  <xs:element name="Permissions">
-    <xs:complexType>
-      <xs:annotation>
-        <xs:documentation xml:lang="en">
-          The set of permissions to use for this collection. Format
-          definition pending.
-        </xs:documentation>
-      </xs:annotation>
-      <xs:sequence minOccurs="1" maxOccurs="unbounded">
-        <xs:element ref="Permission" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-  <xs:element name="Permission">
-    <xs:complexType>
-      <xs:annotation>
-        <xs:documentation xml:lang="en">
-          The set of certificates to use for this collection. Format
-          definition pending.
-        </xs:documentation>
-      </xs:annotation>
-      <xs:sequence>
-        <xs:element ref="Certificate">
-          <xs:annotation>
-            <xs:documentation xml:lang="en">
-              The certificate used to identify the user with the specified permission.
-            </xs:documentation>
-          </xs:annotation>
-        </xs:element>
-        <xs:element ref="OperationType" minOccurs="1" maxOccurs="unbounded">
-          <xs:annotation>
-            <xs:documentation xml:lang="en">
-              Defines the operation (or operation set) the indicated certificate may perform.
-            </xs:documentation>
-          </xs:annotation>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-  <xs:element name="OperationType">
-    <xs:simpleType>
-      <xs:annotation>
-        <xs:documentation xml:lang="en">
-          The list of operations this permission is defined for.
-        </xs:documentation>
-      </xs:annotation>
-      <xs:restriction base="xs:string">
-        <xs:enumeration value="GetFile" />
-        <xs:enumeration value="PutFile" />
-        <xs:enumeration value="GetChecksums" />
-        <xs:enumeration value="GetFileIDs" />
-        <xs:enumeration value="DeleteFile" />
-        <xs:enumeration value="ReplaceFile" />
-        <xs:enumeration value="GetAuditTrails" />
-        <xs:enumeration value="All" />
-        <xs:enumeration value="AllRead" />
-      </xs:restriction>
-    </xs:simpleType>
   </xs:element>
 
   <xs:element name="MessageBusConfiguration">
@@ -214,20 +87,6 @@
           <xs:annotation>
             <xs:documentation xml:lang="en">
               This is where the message bus can be found
-            </xs:documentation>
-          </xs:annotation>
-        </xs:element>
-        <xs:element name="Login" type="xs:string">
-          <xs:annotation>
-            <xs:documentation xml:lang="en">
-              The login name
-            </xs:documentation>
-          </xs:annotation>
-        </xs:element>
-        <xs:element name="Password" type="xs:string">
-          <xs:annotation>
-            <xs:documentation xml:lang="en">
-              The login password
             </xs:documentation>
           </xs:annotation>
         </xs:element>
@@ -389,6 +248,19 @@
     </xs:complexType>
   </xs:element>
 
+  <xs:element name="PermissionSet">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          The set of permissions to allow for this collection.
+        </xs:documentation>
+      </xs:annotation>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element ref="Permission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
   <xs:element name="AuditTrailLevel">
     <xs:simpleType>
       <xs:annotation>
@@ -455,6 +327,93 @@
             </xs:documentation>
           </xs:annotation>
         </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="Permission">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          Describes the permissions for a given entity along with the associated certificate.
+        </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Description of the entity for which these permissions are valid.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="Certificate" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              The certificate used to identify the entity with the specified permission.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="InfrastructurePermission" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Defines the infrastructure components the entity is allowed to access.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+         <xs:element ref="OperationPermission" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Defines the operation (or operation set) the entity may perform.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Certificate">
+    <xs:simpleType>
+      <xs:annotation><xs:documentation xml:lang="en">
+          Encapsulates a single base64 encoded X509 certificate.
+      </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:base64Binary"/>
+    </xs:simpleType>
+  </xs:element>
+ 
+  <xs:element name="InfrastructurePermission">
+    <xs:simpleType>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          Set of the different infrastructure components permission may be granted to.
+          Determines in which trust store(s) the associated certificate may be placed.
+        </xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="MessageBusClient" />
+        <xs:enumeration value="MessageBusServer" />
+        <xs:enumeration value="FileExchangeClient" />
+        <xs:enumeration value="FileExchangeServer" />
+        <xs:enumeration value="MessageSigner" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="OperationPermission">
+    <xs:simpleType>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          Defines the different kinds of operations permission can be given to perform.
+        </xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="GetFile" />
+        <xs:enumeration value="PutFile" />
+        <xs:enumeration value="GetChecksums" />
+        <xs:enumeration value="GetFileIDs" />
+        <xs:enumeration value="DeleteFile" />
+        <xs:enumeration value="ReplaceFile" />
+        <xs:enumeration value="GetAuditTrails" />
+        <xs:enumeration value="All" />
       </xs:restriction>
     </xs:simpleType>
   </xs:element>
