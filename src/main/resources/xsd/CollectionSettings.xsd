@@ -13,24 +13,20 @@
       </xs:documentation>
     </xs:annotation>
     <xs:complexType>
-      <xs:sequence minOccurs="0" maxOccurs="1">
-        <xs:element name="CollectionID" type="xs:string" minOccurs="1" maxOccurs="1">
-          <xs:annotation><xs:documentation xml:lang="en">
-            The ID for the Collection
-          </xs:documentation></xs:annotation>
-        </xs:element>
-        <xs:element ref="ProtocolSettings" />
-        <xs:element ref="ClientSettings" />
-        <xs:element ref="PillarSettings" />
-        <xs:element ref="DeleteFileSettings" />
-        <xs:element ref="GetAuditTrailSettings" />
-        <xs:element ref="GetChecksumsSettings" />
-        <xs:element ref="GetFileSettings" />
-        <xs:element ref="GetFileIDsSettings" />
-        <xs:element ref="GetStatusSettings" />
-        <xs:element ref="PutFileSettings" />
-        <xs:element ref="ReplaceFileSettings" />
-        <xs:element ref="PermissionSet" />
+      <xs:sequence>
+        <xs:element name="CollectionID" type="xs:string" minOccurs="1" />
+        <xs:element ref="ProtocolSettings" minOccurs="0" />
+        <xs:element ref="ClientSettings" minOccurs="0" />
+        <xs:element ref="PillarSettings" minOccurs="0" />
+        <xs:element ref="DeleteFileSettings" minOccurs="0" />
+        <xs:element ref="GetAuditTrailSettings" minOccurs="0" />
+        <xs:element ref="GetChecksumsSettings" minOccurs="0" />
+        <xs:element ref="GetFileSettings" minOccurs="0" />
+        <xs:element ref="GetFileIDsSettings" minOccurs="0" />
+        <xs:element ref="GetStatusSettings" minOccurs="0" />
+        <xs:element ref="PutFileSettings" minOccurs="0" />
+        <xs:element ref="ReplaceFileSettings" minOccurs="0" />
+        <xs:element ref="PermissionSet" minOccurs="0" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -51,8 +47,7 @@
         <xs:element name="CollectionDestination" type="xs:string">
           <xs:annotation>
             <xs:documentation xml:lang="en">
-              The destination for the BitRepository participants to
-              communicate upon.
+              The destination for the BitRepository participants to communicate upon.
             </xs:documentation>
           </xs:annotation>
         </xs:element>
@@ -236,15 +231,6 @@
           The settings for the ReplaceFileClient
         </xs:documentation>
       </xs:annotation>
-      <xs:sequence>
-        <xs:element name="IdentificationTimeout" type="xs:nonNegativeInteger">
-          <xs:annotation>
-            <xs:documentation>
-              The timeout for the identification in milliseconds.
-            </xs:documentation>
-          </xs:annotation>
-        </xs:element>
-      </xs:sequence>
     </xs:complexType>
   </xs:element>
 
