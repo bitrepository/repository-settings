@@ -6,6 +6,9 @@
   </properties>
   <body>
     <release version="0.5" date="2012-01-XX" description="Includes final permission specification.">
+    <action dev="Mikis" type="update">
+        Made all defintion of all toplevel elements optional.
+      </action>
      <action dev="Mikis" type="remove">
         Removed Identification timeout from ReplaceFileSettings. The general ClientSettings timeout should be used here.
       </action>
