@@ -339,14 +339,14 @@
             </xs:documentation>
           </xs:annotation>
         </xs:element>
-        <xs:element ref="InfrastructurePermission" minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="InfrastructurePermission" type="InfrastructurePermission" minOccurs="0" maxOccurs="unbounded">
           <xs:annotation>
             <xs:documentation xml:lang="en">
               Defines the infrastructure components the entity is allowed to access.
             </xs:documentation>
           </xs:annotation>
         </xs:element>
-         <xs:element ref="OperationPermission" minOccurs="0" maxOccurs="unbounded">
+         <xs:element name="OperationPermission" type="OperationPermission" minOccurs="0" maxOccurs="unbounded">
           <xs:annotation>
             <xs:documentation xml:lang="en">
               Defines the operation (or operation set) the entity may perform.
@@ -365,42 +365,38 @@
     <xs:restriction base="xs:base64Binary"/>
     </xs:simpleType>
   </xs:element>
- 
-  <xs:element name="InfrastructurePermission">
-    <xs:simpleType>
-      <xs:annotation>
-        <xs:documentation xml:lang="en">
-          Set of the different infrastructure components permission may be granted to.
-          Determines in which trust store(s) the associated certificate may be placed.
-        </xs:documentation>
-      </xs:annotation>
-      <xs:restriction base="xs:string">
-        <xs:enumeration value="MessageBusClient" />
-        <xs:enumeration value="MessageBusServer" />
-        <xs:enumeration value="FileExchangeClient" />
-        <xs:enumeration value="FileExchangeServer" />
-        <xs:enumeration value="MessageSigner" />
-      </xs:restriction>
-    </xs:simpleType>
-  </xs:element>
 
-  <xs:element name="OperationPermission">
-    <xs:simpleType>
-      <xs:annotation>
-        <xs:documentation xml:lang="en">
-          Defines the different kinds of operations permission can be given to perform.
-        </xs:documentation>
-      </xs:annotation>
-      <xs:restriction base="xs:string">
-        <xs:enumeration value="GetFile" />
-        <xs:enumeration value="PutFile" />
-        <xs:enumeration value="GetChecksums" />
-        <xs:enumeration value="GetFileIDs" />
-        <xs:enumeration value="DeleteFile" />
-        <xs:enumeration value="ReplaceFile" />
-        <xs:enumeration value="GetAuditTrails" />
-        <xs:enumeration value="All" />
-      </xs:restriction>
-    </xs:simpleType>
-  </xs:element>
+  <xs:simpleType name="InfrastructurePermission">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Set of the different infrastructure components permission may be granted to.
+        Determines in which trust store(s) the associated certificate may be placed.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MessageBusClient" />
+      <xs:enumeration value="MessageBusServer" />
+      <xs:enumeration value="FileExchangeClient" />
+      <xs:enumeration value="FileExchangeServer" />
+      <xs:enumeration value="MessageSigner" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="OperationPermission">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Defines the different kinds of operations permission can be given to perform.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GetFile" />
+      <xs:enumeration value="PutFile" />
+      <xs:enumeration value="GetChecksums" />
+      <xs:enumeration value="GetFileIDs" />
+      <xs:enumeration value="DeleteFile" />
+      <xs:enumeration value="ReplaceFile" />
+      <xs:enumeration value="GetAuditTrails" />
+      <xs:enumeration value="All" />
+    </xs:restriction>
+  </xs:simpleType>
 </xs:schema>
