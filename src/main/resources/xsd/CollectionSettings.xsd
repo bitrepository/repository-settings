@@ -15,7 +15,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="CollectionID" type="xs:string" minOccurs="1" />
-        <xs:element ref="ProtocolSettings" minOccurs="0" />
+        <xs:element ref="ProtocolSettings" minOccurs="1" />
         <xs:element ref="ClientSettings" minOccurs="0" />
         <xs:element ref="PillarSettings" minOccurs="0" />
         <xs:element ref="DeleteFileSettings" minOccurs="0" />
