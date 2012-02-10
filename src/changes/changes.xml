@@ -5,6 +5,11 @@
     <title>Bit Repository Collection Settings change notes</title>
   </properties>
   <body>
+    <release version="0.6" date="2012-02-XX" description="Additions for authentication and authorization.">
+      <action dev="Kim" type="add">
+        Added configuration options to require messages being authenticated and authorized. 
+      </action>
+    </release>
     <release version="0.5" date="2012-01-XX" description="Includes final permission specification.">
     <action dev="Mikis" type="update">
         Made all defintion of all toplevel elements optional.

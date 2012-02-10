@@ -43,7 +43,23 @@
               Default checksum used in the collection.
             </xs:documentation>
           </xs:annotation>
+        </xs:element>
+        <xs:element name="RequireMessageAuthentication" type="xs:boolean">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Require components to authenticate any received messages upon reception.
+              The implies that all messages has to be signed by sender. 
+            </xs:documentation>
+          </xs:annotation>
         </xs:element>    
+        <xs:element name="RequireOperationAuthorization" type="xs:boolean">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Require components to authorize any operation prior to execution.
+              The implies that all messages has to be signed by sender.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
         <xs:element name="CollectionDestination" type="xs:string">
           <xs:annotation>
             <xs:documentation xml:lang="en">
