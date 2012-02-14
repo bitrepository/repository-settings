@@ -144,11 +144,11 @@
         </xs:documentation>
       </xs:annotation>
       <xs:sequence>
-        <xs:element name="ProgressResponseMandatory" type="xs:boolean">
+        <xs:element name="RequestAcceptedProgressMandatory" type="xs:boolean">
           <xs:annotation>
             <xs:documentation xml:lang="en">
-              Defines whether progress responds should be set after receiving
-              a operation request.
+              Defines whether it is mandatory to send progress respons after a operation request has been accepted for
+              processing by the pillar. 
             </xs:documentation>
           </xs:annotation>
         </xs:element>
