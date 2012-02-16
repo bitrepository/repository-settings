@@ -5,14 +5,14 @@
     <title>Bit Repository Collection Settings change notes</title>
   </properties>
   <body>
-    <release version="0.6" date="2012-02-XX" description="Additions for authentication and authorization.">
+    <release version="0.6" date="2012-02-16" description="Additions for authentication and authorization.">
       <action dev="Kim" type="add">
         Added configuration options to require messages being authenticated and authorized.
-        <p>This means 'RequireMessageAuthentication' and 'RequireOperationAuthorization' elements need to be added to
-        the protocol settings section of the collection-settings.xml</p>
-      </action><action dev="Mikis" type="update">
+        This means 'RequireMessageAuthentication' and 'RequireOperationAuthorization' elements need to be added to
+        the protocol settings section of the collection-settings.xml.
+      </action>
+      <action dev="Mikis" type="update">
         Changed PillarSettings.ProgressResponseMandatory -> RequestAcceptedProgressMandatory.
-        </p> 
       </action>
     </release>
     <release version="0.5" date="2012-01-XX" description="Includes final permission specification.">
