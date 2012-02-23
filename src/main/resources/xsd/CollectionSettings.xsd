@@ -394,7 +394,15 @@
       <xs:enumeration value="MessageBusServer" />
       <xs:enumeration value="FileExchangeClient" />
       <xs:enumeration value="FileExchangeServer" />
-      <xs:enumeration value="MessageSigner" />
+      <xs:enumeration value="MessageSigner"> 
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            MessageSigner InfrastructurePermission is implicitly given when a set of OperationPermission
+            is provided for a certificate. It would make no sense that a certificate will allow an operation
+            but not allowed to sign a message so the certificate can be identified. 
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
 
@@ -412,6 +420,7 @@
       <xs:enumeration value="DeleteFile" />
       <xs:enumeration value="ReplaceFile" />
       <xs:enumeration value="GetAuditTrails" />
+      <xs:enumeration value="GetStatus" />
       <xs:enumeration value="All" />
     </xs:restriction>
   </xs:simpleType>
