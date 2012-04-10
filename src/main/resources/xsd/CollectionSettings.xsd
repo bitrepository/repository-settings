@@ -387,6 +387,14 @@
             </xs:documentation>
           </xs:annotation>
         </xs:element>
+        <xs:element name="ComponentIDs" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>
+              Defines which components are allowed to use the certificate. Only relevant for OperationPermissions and
+              InfrastructurePermission.MessageSigner, thus it's optional.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
