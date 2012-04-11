@@ -449,6 +449,20 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="Operation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GetFile" />
+      <xs:enumeration value="PutFile" />
+      <xs:enumeration value="GetChecksums" />
+      <xs:enumeration value="GetFileIDs" />
+      <xs:enumeration value="DeleteFile" />
+      <xs:enumeration value="ReplaceFile" />
+      <xs:enumeration value="GetAuditTrails" />
+      <xs:enumeration value="GetStatus" />
+      <xs:enumeration value="All" />
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:complexType name="OperationPermission">
     <xs:annotation>
       <xs:documentation xml:lang="en">
@@ -456,21 +470,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-       <xs:element name="Operation">
-         <xs:simpleType>
-         <xs:restriction base="xs:string">
-           <xs:enumeration value="GetFile" />
-           <xs:enumeration value="PutFile" />
-           <xs:enumeration value="GetChecksums" />
-           <xs:enumeration value="GetFileIDs" />
-           <xs:enumeration value="DeleteFile" />
-           <xs:enumeration value="ReplaceFile" />
-           <xs:enumeration value="GetAuditTrails" />
-           <xs:enumeration value="GetStatus" />
-           <xs:enumeration value="All" />
-         </xs:restriction>
-       </xs:simpleType>
-     </xs:element>
+       <xs:element name="Operation" type="Operation"> </xs:element>
      <xs:element name="AllowedComponents" type="ComponentIDs" minOccurs="0" maxOccurs="1">
        <xs:annotation>
          <xs:documentation xml:lang="en">
