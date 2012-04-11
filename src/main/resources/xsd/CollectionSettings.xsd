@@ -387,13 +387,6 @@
             </xs:documentation>
           </xs:annotation>
         </xs:element>
-        <xs:element name="ComponentIDs" type="ComponentIDs" minOccurs="1" maxOccurs="1">
-          <xs:annotation>
-            <xs:documentation>
-              Defines which components are allowed to use the certificate.
-            </xs:documentation>
-          </xs:annotation>
-        </xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -410,14 +403,27 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:simpleType name="Certificate">
+  <xs:complexType name="Certificate">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Encapsulates a single base64 encoded X509 certificate.
+        Encapsulates a single base64 encoded X509 certificate and defines who is the allowed users.
       </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:base64Binary"/>
-  </xs:simpleType>
+    <xs:sequence>
+      <xs:element name="CertificateData">
+        <xs:simpleType>
+          <xs:restriction base="xs:base64Binary"/>  
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="AllowedComponents" type="ComponentIDs" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Defines which components are allowed to use the certificate.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>    
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:simpleType name="InfrastructurePermission">
     <xs:annotation>
