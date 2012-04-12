@@ -366,7 +366,7 @@
             </xs:documentation>
           </xs:annotation>
         </xs:element>
-        <xs:element ref="Certificate" minOccurs="1" maxOccurs="1">
+        <xs:element name="Certificate" type="Certificate" minOccurs="1" maxOccurs="1">
           <xs:annotation>
             <xs:documentation xml:lang="en">
               The certificate used to identify the entity with the specified permission.
@@ -390,15 +390,40 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  
+  <xs:complexType name="ComponentIDs">
+    <xs:sequence>
+      <xs:element name="IDs" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>
+              Defines the list of allowed components.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+  </xs:complexType>
 
-  <xs:element name="Certificate">
-    <xs:simpleType>
-      <xs:annotation><xs:documentation xml:lang="en">
-          Encapsulates a single base64 encoded X509 certificate.
-      </xs:documentation></xs:annotation>
-    <xs:restriction base="xs:base64Binary"/>
-    </xs:simpleType>
-  </xs:element>
+  <xs:complexType name="Certificate">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Encapsulates a single base64 encoded X509 certificate and defines who is the allowed users.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CertificateData">
+        <xs:simpleType>
+          <xs:restriction base="xs:base64Binary"/>  
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="AllowedCertificateUsers" type="ComponentIDs" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Defines which components are allowed to use the certificate. If no restrictions apply, leave out the element.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>    
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:simpleType name="InfrastructurePermission">
     <xs:annotation>
@@ -424,12 +449,7 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="OperationPermission">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">
-        Defines the different kinds of operations permission can be given to perform.
-      </xs:documentation>
-    </xs:annotation>
+  <xs:simpleType name="Operation">
     <xs:restriction base="xs:string">
       <xs:enumeration value="GetFile" />
       <xs:enumeration value="PutFile" />
@@ -442,4 +462,22 @@
       <xs:enumeration value="All" />
     </xs:restriction>
   </xs:simpleType>
+
+  <xs:complexType name="OperationPermission">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Defines the different kinds of operations permission can be given to perform.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+     <xs:element name="Operation" type="Operation"> </xs:element>
+     <xs:element name="AllowedComponents" type="ComponentIDs" minOccurs="0" maxOccurs="1">
+       <xs:annotation>
+         <xs:documentation xml:lang="en">
+           The list of components where this permission applies. If the list is not present, the permission applys for all. 
+         </xs:documentation>
+       </xs:annotation>
+     </xs:element>
+   </xs:sequence>
+  </xs:complexType>
 </xs:schema>
