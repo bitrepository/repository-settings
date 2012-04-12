@@ -415,10 +415,10 @@
           <xs:restriction base="xs:base64Binary"/>  
         </xs:simpleType>
       </xs:element>
-      <xs:element name="AllowedComponents" type="ComponentIDs" minOccurs="1" maxOccurs="1">
+      <xs:element name="AllowedCertificateUsers" type="ComponentIDs" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
-            Defines which components are allowed to use the certificate.
+            Defines which components are allowed to use the certificate. If no restrictions apply, leave out the element.
           </xs:documentation>
         </xs:annotation>
       </xs:element>    
@@ -470,7 +470,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-       <xs:element name="Operation" type="Operation"> </xs:element>
+     <xs:element name="Operation" type="Operation"> </xs:element>
      <xs:element name="AllowedComponents" type="ComponentIDs" minOccurs="0" maxOccurs="1">
        <xs:annotation>
          <xs:documentation xml:lang="en">
