@@ -44,7 +44,7 @@
             </xs:documentation>
           </xs:annotation>
         </xs:element>
-        <xs:element name="AllowedFileIDs" type="xs:string">
+        <xs:element name="AllowedFileIDPattern" type="xs:string">
           <xs:annotation> 
             <xs:documentation>
               Regular expression describing the allowed fileIDs in the collection.
