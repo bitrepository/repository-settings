@@ -5,6 +5,10 @@
     <title>Bit Repository Collection Settings change notes</title>
   </properties>
   <body>
+    <release version="0.8" date="2012-05-xx" description="Additions for Status and AuditTrail services">
+      <action dev="Mikis" type="remove">Removed Audit trail and Alarm levels.</action>
+      <action dev="Mikis" type="remove">Removed RequestAcceptedProgressMandatory from PillarSettings.</action>
+    </release>
     <release version="0.7" date="2012-04-xx" description="Additions for Status and AuditTrail services">
       <action dev="Kim" type="add">Added contributor lists to GetStatusSettings and GetAuditTrailSettings</action>
       <action dev="Mikis" type="update">Removed versioning from name space to confine to message-xml versioning strategy.</action>
@@ -18,22 +22,6 @@
       </action>
       <action dev="Mikis" type="update">
         Changed PillarSettings.ProgressResponseMandatory -> RequestAcceptedProgressMandatory.
-      </action>
-    </release>
-    <release version="0.5" date="2012-01-XX" description="Includes final permission specification.">
-    <action dev="Mikis" type="update">
-        Made all defintion of all toplevel elements optional.
-      </action>
-     <action dev="Mikis" type="remove">
-        Removed Identification timeout from ReplaceFileSettings. The general ClientSettings timeout should be used here.
-      </action>
-      <action dev="Michael" type="update">
-        Consolidated permission definitions as PermissionSet element. 
-      </action>
-    </release>
-    <release version="0.3.2" date="2011-11-XX" description="">
-      <action dev="Mikis" type="add">
-        Added certificate definitions"> 
       </action>
     </release>
   </body>
