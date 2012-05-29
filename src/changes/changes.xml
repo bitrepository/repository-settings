@@ -5,6 +5,9 @@
     <title>Bit Repository Collection Settings change notes</title>
   </properties>
   <body>
+    <release version="0.9" date="2012-06-xx" description="Additions for protocol settings">
+       <action dev="Kim" type="add"> Add configuration option to require checksums for pillar verification. </action>
+    </release>
     <release version="0.8" date="2012-05-xx" description="Additions for Status and AuditTrail services">
       <action dev="Mikis" type="remove">Removed Audit trail and Alarm levels.</action>
       <action dev="Mikis" type="remove">Removed RequestAcceptedProgressMandatory from PillarSettings.</action>

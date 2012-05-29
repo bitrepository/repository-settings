@@ -67,6 +67,15 @@
             </xs:documentation>
           </xs:annotation>
         </xs:element>
+        <xs:element name="RequireChecksumForDestructiveRequests" type="xs:boolean">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Require a checksum for pillar verification when requesting a destructive operation.
+              I.e. require the provision of a checksum and specification when requesting the 
+              replacement or deletion of a file.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
         <xs:element name="CollectionDestination" type="xs:string">
           <xs:annotation>
             <xs:documentation xml:lang="en">
