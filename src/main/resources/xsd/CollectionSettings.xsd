@@ -76,6 +76,14 @@
             </xs:documentation>
           </xs:annotation>
         </xs:element>
+        <xs:element name="RequireChecksumForNewFileRequests" type="xs:boolean">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Require a checksum when requesting a new file in the collection. 
+              This also covers the new file in a replace request. 
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
         <xs:element name="CollectionDestination" type="xs:string">
           <xs:annotation>
             <xs:documentation xml:lang="en">
