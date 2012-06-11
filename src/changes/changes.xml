@@ -5,27 +5,23 @@
     <title>Bit Repository Collection Settings change notes</title>
   </properties>
   <body>
-    <release version="0.9" date="2012-06-xx" description="Additions for protocol settings">
-       <action dev="Kim" type="add"> Add configuration option to require checksums for pillar verification. </action>
+    <release version="0.9" date="2012-06-08" description="Additions for protocol settings">
+      <action dev="Kim" type="add"  issue="BITMAG-429">
+        Add configuration option to require checksums for pillar verification.
+      </action>
+      <action dev="Kim" type="add">
+        Add configuration option to require checksums for new files.
+      </action>
     </release>
-    <release version="0.8" date="2012-05-xx" description="Additions for Status and AuditTrail services">
+
+    <release version="0.8" date="2012-05-21" description="Additions for Status and AuditTrail services">
       <action dev="Mikis" type="remove">Removed Audit trail and Alarm levels.</action>
       <action dev="Mikis" type="remove">Removed RequestAcceptedProgressMandatory from PillarSettings.</action>
     </release>
-    <release version="0.7" date="2012-04-xx" description="Additions for Status and AuditTrail services">
+    <release version="0.7" date="2012-04-18" description="Additions for Status and AuditTrail services">
       <action dev="Kim" type="add">Added contributor lists to GetStatusSettings and GetAuditTrailSettings</action>
       <action dev="Mikis" type="update">Removed versioning from name space to confine to message-xml versioning strategy.</action>
       <action dev="Kim" type="add">Added required element for describing the allowed fileIDs</action>
-    </release>
-    <release version="0.6" date="2012-02-16" description="Additions for authentication and authorization.">
-      <action dev="Kim" type="add">
-        Added configuration options to require messages being authenticated and authorized.
-        This means 'RequireMessageAuthentication' and 'RequireOperationAuthorization' elements need to be added to
-        the protocol settings section of the collection-settings.xml.
-      </action>
-      <action dev="Mikis" type="update">
-        Changed PillarSettings.ProgressResponseMandatory -> RequestAcceptedProgressMandatory.
-      </action>
     </release>
   </body>
 </document>
