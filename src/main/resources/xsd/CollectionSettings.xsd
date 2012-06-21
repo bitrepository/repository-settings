@@ -54,7 +54,7 @@
         <xs:element name="RequireMessageAuthentication" type="xs:boolean">
           <xs:annotation>
             <xs:documentation xml:lang="en">
-              Require components to authenticate any received messages upon reception.
+              Require components to authenticate any messages upon reception.
               The implies that all messages has to be signed by sender. 
             </xs:documentation>
           </xs:annotation>
@@ -87,7 +87,7 @@
         <xs:element name="CollectionDestination" type="xs:string">
           <xs:annotation>
             <xs:documentation xml:lang="en">
-              The destination for the BitRepository participants to communicate upon.
+              The destination for broadcast messages in the BitRepository. I.e. the Identify requests.
             </xs:documentation>
           </xs:annotation>
         </xs:element>
@@ -145,7 +145,7 @@
         <xs:element name="OperationTimeout" type="xs:nonNegativeInteger">
           <xs:annotation>
             <xs:documentation>
-              The timeout for the identification in milliseconds.
+              The timeout for the actual operation in milliseconds.
             </xs:documentation>
           </xs:annotation>
         </xs:element>
@@ -274,7 +274,7 @@
     <xs:complexType>
       <xs:annotation>
         <xs:documentation xml:lang="en">
-          The set of permissions to allow for this collection.
+          The set of permissions valid in this collection.
         </xs:documentation>
       </xs:annotation>
       <xs:sequence minOccurs="1" maxOccurs="unbounded">
@@ -360,8 +360,7 @@
   <xs:simpleType name="InfrastructurePermission">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Set of the different infrastructure components permission may be granted to.
-        Determines in which trust store(s) the associated certificate may be placed.
+        The set of the different infrastructure permission components may be granted.
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
@@ -398,7 +397,7 @@
   <xs:complexType name="OperationPermission">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Defines the different kinds of operations permission can be given to perform.
+        Defines the different kinds of operations permission can be given.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -406,7 +405,7 @@
      <xs:element name="AllowedComponents" type="ComponentIDs" minOccurs="0" maxOccurs="1">
        <xs:annotation>
          <xs:documentation xml:lang="en">
-           The list of components where this permission applies. If the list is not present, the permission applys for all. 
+           The list of components where this permission applies. If the list is not present, the permission applies for all. 
          </xs:documentation>
        </xs:annotation>
      </xs:element>
