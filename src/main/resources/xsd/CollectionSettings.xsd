@@ -161,7 +161,7 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="PillarSettings">
+    <xs:element name="PillarSettings">
     <xs:complexType>
       <xs:annotation>
         <xs:documentation xml:lang="en">
