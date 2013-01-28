@@ -8,10 +8,10 @@
   </parent>
 
   <groupId>org.bitrepository</groupId>
-  <artifactId>bitrepository-collection-settings</artifactId>
+  <artifactId>bitrepository-repository-settings</artifactId>
   <version>0.10-SNAPSHOT</version>
-  <name>Bitrepository collection settings</name>
-  <description>Contains the standard settings used to define a Bit Repository Collection</description>
+  <name>Bitrepository repository settings</name>
+  <description>Contains the standard settings used to define a Bit Repository installation</description>
 
   <licenses>
     <license>
