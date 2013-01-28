@@ -5,6 +5,12 @@
     <title>Bit Repository Collection Settings change notes</title>
   </properties>
   <body>
+    <release version="0.10" date="2013-01-28" description="Change of collection concept">
+      <action dev="Kim" type="update"> Rename CollectionSettings to RepositorySettings </action>
+      <action dev="Kim" type="add" issue="BITMAG-798">
+        Change definition of CollectionID to a new element containing a list of CollectionIDs. 
+      </action>
+    </release>
     <release version="0.9" date="2012-06-08" description="Additions for protocol settings">
       <action dev="Kim" type="add"  issue="BITMAG-429">
         Add configuration option to require checksums for pillar verification.

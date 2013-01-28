@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Version ${project.version} -->
-<xs:schema targetNamespace="http://bitrepository.org/settings/CollectionSettings.xsd"
+<xs:schema targetNamespace="http://bitrepository.org/settings/RepositorySettings.xsd"
   attributeFormDefault="unqualified" elementFormDefault="qualified" 
 
-  xmlns="http://bitrepository.org/settings/CollectionSettings.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://bitrepository.org/settings/RepositorySettings.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
 
-  <xs:element name="CollectionSettings">
+  <xs:element name="RepositorySettings">
     <xs:annotation>
       <xs:documentation xml:lang="en">
         The settings for the BitRepository
@@ -14,7 +14,7 @@
     </xs:annotation>
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="CollectionID" type="xs:string" minOccurs="1" />
+        <xs:element ref="CollectionIDs" minOccurs="1" />
         <xs:element ref="ProtocolSettings" minOccurs="1" />
         <xs:element ref="ClientSettings" minOccurs="0" />
         <xs:element ref="PillarSettings" minOccurs="0" />
@@ -27,6 +27,21 @@
         <xs:element ref="PutFileSettings" minOccurs="0" />
         <xs:element ref="ReplaceFileSettings" minOccurs="0" />
         <xs:element ref="PermissionSet" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="CollectionIDs">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation>Listing of CollectionIDs present in this Bitrepository.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element name="CollectionID" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>CollectionID, the identifier of a collection of files in the Bitrepository.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
