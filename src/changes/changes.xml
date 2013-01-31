@@ -10,6 +10,9 @@
       <action dev="Kim" type="add" issue="BITMAG-798">
         Change definition of CollectionID to a new element containing a list of CollectionIDs. 
       </action>
+      <action dev="Mikis" type="add" issue="BITMAG-826">
+        Switch to using dedicated topics for identifies for pillars, audittrail- and status contributors.
+      </action>
     </release>
     <release version="0.9" date="2012-06-08" description="Additions for protocol settings">
       <action dev="Kim" type="add"  issue="BITMAG-429">

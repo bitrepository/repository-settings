@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+ <?xml version="1.0" encoding="utf-8"?>
 <!-- Version ${project.version} -->
 <xs:schema targetNamespace="http://bitrepository.org/settings/RepositorySettings.xsd"
   attributeFormDefault="unqualified" elementFormDefault="qualified" 
@@ -103,7 +103,7 @@
         <xs:element name="CollectionDestination" type="xs:string">
           <xs:annotation>
             <xs:documentation xml:lang="en">
-              The destination for broadcast messages in the BitRepository. I.e. the Identify requests.
+              The destination for general broadcast messages in the BitRepository. I.e. the Identify requests.
             </xs:documentation>
           </xs:annotation>
         </xs:element>
@@ -111,6 +111,30 @@
           <xs:annotation>
             <xs:documentation xml:lang="en">
               The destination (topic/queue) for exchanging alarms.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="PillarDestination" type="xs:string" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              The destination for broadcast messages to pillars. I.e. the Identify requests. If this issen't defined
+              the general CollectionDestination is used
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="AuditTrailDestination" type="xs:string" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              The destination for broadcast messages to audit trail contributors. I.e. the Identify requests. If this
+              isen't defined the general CollectionDestination is used.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="StatusDestination" type="xs:string" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              The destination for identifying status contributors. I.e. the Identify requests. If this
+              isen't defined the general CollectionDestination is used.
             </xs:documentation>
           </xs:annotation>
         </xs:element>
