@@ -14,7 +14,8 @@
     </xs:annotation>
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="CollectionIDs" minOccurs="1" />
+        <xs:element name="Name" type="xs:string">
+        <xs:element ref="Collections" minOccurs="1" />
         <xs:element ref="ProtocolSettings" minOccurs="1" />
         <xs:element ref="ClientSettings" minOccurs="0" />
         <xs:element ref="PillarSettings" minOccurs="0" />
@@ -31,17 +32,43 @@
     </xs:complexType>
   </xs:element>
   
-  <xs:element name="CollectionIDs">
+  <xs:element name="Collections">
     <xs:complexType>
       <xs:annotation>
-        <xs:documentation>Listing of CollectionIDs present in this Bitrepository.</xs:documentation>
+        <xs:documentation>List of Collections present in the repository.</xs:documentation>
       </xs:annotation>
       <xs:sequence>
-        <xs:element name="CollectionID" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+        <xs:element name="Collection" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Collection">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation>Defines the collection specific part attributes.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element name="ID" type="xs:string" >
           <xs:annotation>
-            <xs:documentation>CollectionID, the identifier of a collection of files in the Bitrepository.</xs:documentation>
+            <xs:documentation> The unique ID of the collection.</xs:documentation>
           </xs:annotation>
         </xs:element>
+          <xs:element ref="PillarIDs">
+            <xs:annotation>
+              <xs:documentation>
+                List of the pillars contributing to the collection.
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="PillarIDs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PillarID" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -186,13 +213,6 @@
           <xs:annotation>
             <xs:documentation>
               The timeout for the actual operation in milliseconds.
-            </xs:documentation>
-          </xs:annotation>
-        </xs:element>
-        <xs:element name="PillarIDs" type="xs:string" minOccurs="1" maxOccurs="unbounded">
-          <xs:annotation>
-            <xs:documentation>
-              List of the pillars contributing to the collection.
             </xs:documentation>
           </xs:annotation>
         </xs:element>
@@ -442,13 +462,21 @@
     </xs:annotation>
     <xs:sequence>
      <xs:element name="Operation" type="Operation"> </xs:element>
-     <xs:element name="AllowedComponents" type="ComponentIDs" minOccurs="0" maxOccurs="1">
+     <xs:element name="AllowedComponents" type="ComponentIDs" minOccurs="0" maxOccurs="unbounded">
        <xs:annotation>
          <xs:documentation xml:lang="en">
            The list of components where this permission applies. If the list is not present, the permission applies for all. 
          </xs:documentation>
        </xs:annotation>
      </xs:element>
+      <xs:element name="Collections" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The list of collection where this permission applies. If the list is not present, the permission applies
+            for all.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
    </xs:sequence>
   </xs:complexType>
 </xs:schema>

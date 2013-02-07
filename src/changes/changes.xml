@@ -5,7 +5,10 @@
     <title>Bit Repository Collection Settings change notes</title>
   </properties>
   <body>
-    <release version="0.10" date="2013-01-28" description="Change of collection concept">
+    <release version="0.10" date="2013-01-28" description="Support for multiple collections in one repository">
+      <action dev="Mikis" type="update">Added support for different number of pillars participating in
+        different collections in one repository.</action>
+      <action dev="Mikis" type="add">Added mandatory name element to top level</action>
       <action dev="Kim" type="update"> Rename CollectionSettings to RepositorySettings </action>
       <action dev="Kim" type="add" issue="BITMAG-798">
         Change definition of CollectionID to a new element containing a list of CollectionIDs. 
