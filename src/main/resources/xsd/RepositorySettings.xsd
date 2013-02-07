@@ -134,7 +134,7 @@
           <xs:annotation>
             <xs:documentation xml:lang="en">
               The destination for identifying status contributors. I.e. the Identify requests. If this
-              isen't defined the general CollectionDestination is used.
+              isn't defined the general CollectionDestination is used.
             </xs:documentation>
           </xs:annotation>
         </xs:element>
