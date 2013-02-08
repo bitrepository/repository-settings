@@ -14,7 +14,7 @@
     </xs:annotation>
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="Name" type="xs:string">
+        <xs:element name="Name" type="xs:string"/>
         <xs:element ref="Collections" minOccurs="1" />
         <xs:element ref="ProtocolSettings" minOccurs="1" />
         <xs:element ref="ClientSettings" minOccurs="0" />
