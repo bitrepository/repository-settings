@@ -1,4 +1,4 @@
- <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Version ${project.version} -->
 <xs:schema targetNamespace="http://bitrepository.org/settings/RepositorySettings.xsd"
   attributeFormDefault="unqualified" elementFormDefault="qualified" 
@@ -31,14 +31,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:element name="Collections">
     <xs:complexType>
       <xs:annotation>
         <xs:documentation>List of Collections present in the repository.</xs:documentation>
       </xs:annotation>
       <xs:sequence>
-        <xs:element name="Collection" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+        <xs:element ref="Collection" maxOccurs="unbounded" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
