@@ -1,8 +1,10 @@
 <?xml version="1.0"?>
 
 <xsl:stylesheet version="1.0"
+
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:old="http://bitrepository.org/settings/CollectionSettings.xsd"
+                xmlns="http://bitrepository.org/settings/RepositorySettings.xsd"
                 exclude-result-prefixes="old xalan"
                 xmlns:redirect="http://xml.apache.org/xalan/redirect"
                 extension-element-prefixes="redirect"
