@@ -463,7 +463,7 @@
     </xs:annotation>
     <xs:sequence>
      <xs:element name="Operation" type="Operation"> </xs:element>
-     <xs:element name="AllowedComponents" type="ComponentIDs" minOccurs="0" maxOccurs="unbounded">
+     <xs:element name="AllowedComponents" type="ComponentIDs" minOccurs="0" maxOccurs="1">
        <xs:annotation>
          <xs:documentation xml:lang="en">
            The list of components where this permission applies. If the list is not present, the permission applies for all. 
