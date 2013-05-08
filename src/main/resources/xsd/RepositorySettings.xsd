@@ -256,7 +256,7 @@
         </xs:documentation>
       </xs:annotation>
       <xs:sequence>
-        <xs:element name="IDsOfNonPillarContributors" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="NonPillarContributorIDs" type="xs:string" minOccurs="0" maxOccurs="unbounded">
           <xs:annotation>
             <xs:documentation>
               List of IDs of the components that should respond to GetAuditTrail, beside the pillars 
