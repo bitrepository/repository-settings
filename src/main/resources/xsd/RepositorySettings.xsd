@@ -306,7 +306,7 @@
         </xs:documentation>
       </xs:annotation>
       <xs:sequence>
-        <xs:element name="ContributorIDs" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="NonPillarContributorIDs" type="xs:string" minOccurs="0" maxOccurs="unbounded">
           <xs:annotation>
             <xs:documentation>
               List of the components that should respond to GetStatus.
