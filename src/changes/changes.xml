@@ -5,11 +5,16 @@
     <title>Bit Repository Collection Settings change notes</title>
   </properties>
   <body>
-    <release version="0.10" date="2013-01-28" description="Support for multiple collections in one repository">
-      <action dev="Mikis" type="update">Added support for different number of pillars participating in
-        different collections in one repository.</action>
+    <release version="10" date="2013-05-15" description="Support for multiple collections in one repository">
+      <action dev="Mikis" type="update">Switching to integer versioning numbering</action>
+      <action dev="Mikis" type="add">Add configuration option to require checksums for pillar verification.</action>
+      <action dev="Mikis" type="add">Add configuration option to require checksums for new files.</action>
+      <action dev="Mikis" type="add">Introducing (optional) dedicated topics for pillar, audittrail- and status
+      contributors</action>
+      <action dev="Mikis" type="add">Added optional name element to Collection element</action>
+      <action dev="Mikis" type="update">Switching to integer versioning numbering</action>
       <action dev="Mikis" type="add">Added mandatory name element to top level</action>
-      <action dev="Kim" type="update"> Rename RepositorySettings to RepositorySettings </action>
+      <action dev="Kim" type="update"> Rename CollectionSettingsSettings to RepositorySettings </action>
       <action dev="Kim" type="add" issue="BITMAG-798">
         Change definition of CollectionID to a new element containing a list of CollectionIDs. 
       </action>
@@ -24,16 +29,6 @@
       <action dev="Kim" type="add">
         Add configuration option to require checksums for new files.
       </action>
-    </release>
-
-    <release version="0.8" date="2012-05-21" description="Additions for Status and AuditTrail services">
-      <action dev="Mikis" type="remove">Removed Audit trail and Alarm levels.</action>
-      <action dev="Mikis" type="remove">Removed RequestAcceptedProgressMandatory from PillarSettings.</action>
-    </release>
-    <release version="0.7" date="2012-04-18" description="Additions for Status and AuditTrail services">
-      <action dev="Kim" type="add">Added contributor lists to GetStatusSettings and GetAuditTrailSettings</action>
-      <action dev="Mikis" type="update">Removed versioning from name space to confine to message-xml versioning strategy.</action>
-      <action dev="Kim" type="add">Added required element for describing the allowed fileIDs</action>
     </release>
   </body>
 </document>
