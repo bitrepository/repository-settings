@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <xsl:stylesheet version="1.0"
-
+                xmlns:fn="http://www.w3.org/2005/xpath-functions"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:old="http://bitrepository.org/settings/CollectionSettings.xsd"
                 xmlns="http://bitrepository.org/settings/RepositorySettings.xsd"
@@ -33,6 +33,17 @@
   <xsl:template match="old:CollectionID"></xsl:template>
 
   <xsl:template match="old:PillarIDs"></xsl:template>
+
+  <xsl:template match="old:ContributorIDs">
+
+    <xsl:variable name="pillarID" select="text()"/>
+    <xsl:if test="not(/old:CollectionSettings/old:ClientSettings[old:PillarIDs = $pillarID])">
+      <NonPillarContributorIDs>
+        <xsl:value-of select="$pillarID"/>
+      </NonPillarContributorIDs>
+    </xsl:if>
+  </xsl:template>
+
 
   <xsl:template name="getCollections">
     <Name>
