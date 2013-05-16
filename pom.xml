@@ -30,7 +30,7 @@
   <distributionManagement>
     <site>
       <id>sbforge-nexus</id>
-      <url>dav:https://sbforge.org/maven/bitrepository/sites/collection-settings/${project.version}</url>
+      <url>dav:https://sbforge.org/maven/bitrepository/sites/repository-settings/${project.version}</url>
     </site>
   </distributionManagement>
 
