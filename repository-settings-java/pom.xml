@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.bitrepository</groupId>
+    <artifactId>bitrepository-repository-settings</artifactId>
+    <version>11-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>repository-settings-java</artifactId>
+  <name>Bitrepository repository settings auto generated java classes </name>
+  <description>Contains the standard settings used to define a Bit Repository installation</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jvnet.jaxb2_commons</groupId>
+      <artifactId>jaxb2-basics-runtime</artifactId>
+      <version>0.6.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.bitrepository</groupId>
+      <artifactId>repository-settings-xsd</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+        <excludes>
+          <exclude>xsd/BitRepositoryElements.xsd</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+
+      <plugin>
+        <artifactId>maven-remote-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>process-remote-resources</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>process</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/repositorysettings</outputDirectory>
+              <attached>false</attached> <!-- If attached is true (the default) the copy-resources step below will 
+                re-include the resources from the last build in the current. -->
+              <resourceBundles>
+                <resourceBundle>org.bitrepository:repository-settings-xsd:${project.version}</resourceBundle>
+              </resourceBundles>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <version>0.8.0</version>
+        <executions>
+          <execution>
+            <id>generate-repositorysettings-classes</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <schemaDirectory>${project.build.directory}/repositorysettings/xsd</schemaDirectory>
+              <generateDirectory>${project.build.directory}/generated-sources/repositorysettings</generateDirectory>
+              <generatePackage>org.bitrepository.settings.repositorysettings</generatePackage>
+              <extension>true</extension>
+              <args>
+                <arg>-XtoString</arg>
+                <arg>-Xequals</arg>
+                <arg>-XhashCode</arg>
+                <arg>-Xannotate</arg>
+              </args>
+              <plugins>
+                <plugin>
+                  <groupId>org.jvnet.jaxb2_commons</groupId>
+                  <artifactId>jaxb2-basics</artifactId>
+                  <version>0.6.2</version>
+                </plugin>
+                <plugin>
+                  <groupId>org.jvnet.jaxb2_commons</groupId>
+                  <artifactId>jaxb2-basics-annotate</artifactId>
+                  <version>0.6.2</version>
+                </plugin>
+              </plugins>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+     </plugins> 
+  </build>
+</project>

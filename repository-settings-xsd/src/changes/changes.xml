@@ -1,0 +1,34 @@
+<document xmlns="http://maven.apache.org/changes/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
+  <properties>
+    <title>Bit Repository Collection Settings change notes</title>
+  </properties>
+  <body>
+    <release version="10" date="2013-05-15" description="Support for multiple collections in one repository">
+      <action dev="Mikis" type="update">Switching to integer versioning numbering</action>
+      <action dev="Mikis" type="add">Add configuration option to require checksums for pillar verification.</action>
+      <action dev="Mikis" type="add">Add configuration option to require checksums for new files.</action>
+      <action dev="Mikis" type="add">Introducing (optional) dedicated topics for pillar, audittrail- and status
+      contributors</action>
+      <action dev="Mikis" type="add">Added optional name element to Collection element</action>
+      <action dev="Mikis" type="update">Switching to integer versioning numbering</action>
+      <action dev="Mikis" type="add">Added mandatory name element to top level</action>
+      <action dev="Kim" type="update"> Rename CollectionSettingsSettings to RepositorySettings </action>
+      <action dev="Kim" type="add" issue="BITMAG-798">
+        Change definition of CollectionID to a new element containing a list of CollectionIDs. 
+      </action>
+      <action dev="Mikis" type="add" issue="BITMAG-826">
+        Switch to using dedicated topics for identifies for pillars, audittrail- and status contributors.
+      </action>
+    </release>
+    <release version="0.9" date="2012-06-08" description="Additions for protocol settings">
+      <action dev="Kim" type="add"  issue="BITMAG-429">
+        Add configuration option to require checksums for pillar verification.
+      </action>
+      <action dev="Kim" type="add">
+        Add configuration option to require checksums for new files.
+      </action>
+    </release>
+  </body>
+</document>

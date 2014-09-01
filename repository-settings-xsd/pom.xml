@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.bitrepository</groupId>
+    <artifactId>bitrepository-repository-settings</artifactId>
+    <version>11-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>repository-settings-xsd</artifactId>
+  <name>Bitrepository repository settings definitions</name>
+  <description>Contains the standard settings used to define a Bit Repository installation</description>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+        <excludes>
+          <exclude>xsd/BitRepositoryElements.xsd</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-remote-resources-plugin</artifactId>
+        <version>1.2.1</version>
+        <configuration>
+          <includes>
+            <include>xsd/*.xsd</include>
+          </includes>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>bundle</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptors>
+            <descriptor>src/main/assembly/scripts-assembly.xml</descriptor>
+          </descriptors>
+        </configuration>
+        <executions>
+          <execution>
+            <id>distribution</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.2.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>

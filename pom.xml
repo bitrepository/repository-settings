@@ -10,8 +10,14 @@
   <groupId>org.bitrepository</groupId>
   <artifactId>bitrepository-repository-settings</artifactId>
   <version>11-SNAPSHOT</version>
+  <packaging>pom</packaging>
   <name>Bitrepository repository settings</name>
   <description>Contains the standard settings used to define a Bit Repository installation</description>
+
+  <modules>
+    <module>repository-settings-xsd</module>
+    <module>repository-settings-java</module>
+  </modules>
 
   <licenses>
     <license>
@@ -47,58 +53,4 @@
     </repository>
   </repositories>
 
-  <build>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>true</filtering>
-        <excludes>
-          <exclude>xsd/BitRepositoryElements.xsd</exclude>
-        </excludes>
-      </resource>
-    </resources>
-    <plugins>
-      <plugin>
-        <artifactId>maven-remote-resources-plugin</artifactId>
-        <version>1.2.1</version>
-        <configuration>
-          <includes>
-            <include>xsd/*.xsd</include>
-          </includes>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>bundle</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptors>
-            <descriptor>src/main/assembly/scripts-assembly.xml</descriptor>
-          </descriptors>
-        </configuration>
-        <executions>
-          <execution>
-            <id>distribution</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <artifactId>maven-release-plugin</artifactId>
-          <version>2.2.2</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
 </project>
