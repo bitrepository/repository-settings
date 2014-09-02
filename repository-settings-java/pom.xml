@@ -25,7 +25,7 @@
   </dependencies>
 
   <build>
-    <resources>
+    <!-- <resources>
       <resource>
         <directory>src/main/resources</directory>
         <filtering>true</filtering>
@@ -33,25 +33,23 @@
           <exclude>xsd/BitRepositoryElements.xsd</exclude>
         </excludes>
       </resource>
-    </resources>
+    </resources> -->
     <plugins>
-
+    
       <plugin>
-        <artifactId>maven-remote-resources-plugin</artifactId>
+        <artifactId>maven-dependency-plugin</artifactId>
         <executions>
           <execution>
-            <id>process-remote-resources</id>
-            <phase>generate-sources</phase>
+            <id>Extract-xsd-files</id>
             <goals>
-              <goal>process</goal>
+              <goal>unpack-dependencies</goal>
             </goals>
+            <phase>generate-sources</phase>
             <configuration>
+              <includeGroupIds>org.bitrepository</includeGroupIds>
+              <includeArtifactIds>repository-settings-xsd</includeArtifactIds>
+              <includes>xsd/*.xsd</includes>
               <outputDirectory>${project.build.directory}/repositorysettings</outputDirectory>
-              <attached>false</attached> <!-- If attached is true (the default) the copy-resources step below will 
-                re-include the resources from the last build in the current. -->
-              <resourceBundles>
-                <resourceBundle>org.bitrepository:repository-settings-xsd:${project.version}</resourceBundle>
-              </resourceBundles>
             </configuration>
           </execution>
         </executions>

@@ -23,22 +23,6 @@
     </resources>
     <plugins>
       <plugin>
-        <artifactId>maven-remote-resources-plugin</artifactId>
-        <version>1.2.1</version>
-        <configuration>
-          <includes>
-            <include>xsd/*.xsd</include>
-          </includes>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>bundle</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
           <descriptors>
