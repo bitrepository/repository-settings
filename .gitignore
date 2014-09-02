@@ -2,5 +2,6 @@
 .project
 .settings/*
 target/
+*/.settings/*
 src/main/resources/script/migration/RepositorySettings.xml
 src/main/resources/script/migration/CollectionSettings.xml
