@@ -33,12 +33,6 @@
     <url>https://sbforge.org/fisheye/browse/bitrepository-collection-settings/</url>
   </scm>
 
-  <distributionManagement>
-    <site>
-      <id>sbforge-nexus</id>
-      <url>dav:https://sbforge.org/maven/bitrepository/sites/repository-settings/${project.version}</url>
-    </site>
-  </distributionManagement>
 
   <repositories>
     <repository>
