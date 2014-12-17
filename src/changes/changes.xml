@@ -5,6 +5,10 @@
     <title>Bit Repository Collection Settings change notes</title>
   </properties>
   <body>
+    <release version="11" date="2014-12-17">
+      <action dev="Kim" type="update">Update sbforge-parent version to version 18 for fixing git support</action>
+      <action dev="Kim" type="update">Break out in two module project one for xsd's one for pre-generated java classes</action>
+    </release>
     <release version="10" date="2013-05-15" description="Support for multiple collections in one repository">
       <action dev="Mikis" type="update">Switching to integer versioning numbering</action>
       <action dev="Mikis" type="add">Add configuration option to require checksums for pillar verification.</action>
