@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bitrepository</groupId>
+    <groupId>org.bitrepository.repository-settings</groupId>
     <artifactId>bitrepository-repository-settings</artifactId>
     <version>11-SNAPSHOT</version>
   </parent>
