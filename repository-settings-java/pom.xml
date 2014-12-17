@@ -18,7 +18,7 @@
       <version>0.6.0</version>
     </dependency>
     <dependency>
-      <groupId>org.bitrepository</groupId>
+      <groupId>org.bitrepository.repository-settings</groupId>
       <artifactId>repository-settings-xsd</artifactId>
       <version>${project.version}</version>
     </dependency>
