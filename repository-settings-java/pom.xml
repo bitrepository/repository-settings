@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.bitrepository.repository-settings</groupId>
     <artifactId>bitrepository-repository-settings</artifactId>
-    <version>11</version>
+    <version>12-SNAPSHOT</version>
   </parent>
 
   <artifactId>repository-settings-java</artifactId>
