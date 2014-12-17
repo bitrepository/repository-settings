@@ -28,9 +28,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git@github.com:bitrepository/bitrepository-collection-settings.git</connection>
-    <developerConnection>scm:git:git@github.com:bitrepository/bitrepository-collection-settings.git</developerConnection>
-    <url>https://sbforge.org/fisheye/browse/bitrepository-collection-settings/</url>
+    <connection>scm:git:git@github.com:bitrepository/repository-settings.git</connection>
+    <developerConnection>scm:git:git@github.com:bitrepository/repository-settings.git</developerConnection>
+    <url>https://sbforge.org/fisheye/browse/bitrepository-repository-settings/</url>
   </scm>
 
 
