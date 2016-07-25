@@ -15,8 +15,8 @@
   <description>Contains the standard settings used to define a Bit Repository installation</description>
 
   <modules>
-    <module>repository-settings-xsd</module>
-    <module>repository-settings-java</module>
+    <module>bitrepository-repository-settings-xsd</module>
+    <module>bitrepository-repository-settings-java</module>
   </modules>
 
   <licenses>

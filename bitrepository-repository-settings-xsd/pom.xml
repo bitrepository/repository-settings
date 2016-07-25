@@ -7,7 +7,7 @@
     <version>12-SNAPSHOT</version>
   </parent>
 
-  <artifactId>repository-settings-xsd</artifactId>
+  <artifactId>bitrepository-repository-settings-xsd</artifactId>
   <name>Bitrepository repository settings definitions</name>
   <description>Contains the standard settings used to define a Bit Repository installation</description>
 
