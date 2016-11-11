@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.bitrepository.repository-settings</groupId>
     <artifactId>bitrepository-repository-settings</artifactId>
-    <version>12-SNAPSHOT</version>
+    <version>12</version>
   </parent>
 
   <artifactId>bitrepository-repository-settings-xsd</artifactId>
