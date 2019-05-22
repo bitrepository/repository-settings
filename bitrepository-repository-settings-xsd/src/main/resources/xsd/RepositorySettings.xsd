@@ -453,6 +453,7 @@
       <xs:enumeration value="PutFile" />
       <xs:enumeration value="GetChecksums" />
       <xs:enumeration value="GetFileIDs" />
+      <xs:enumeration value="GetFileInfos" />
       <xs:enumeration value="DeleteFile" />
       <xs:enumeration value="ReplaceFile" />
       <xs:enumeration value="GetAuditTrails" />
