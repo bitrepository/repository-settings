@@ -102,42 +102,45 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.jvnet.jaxb2.maven2</groupId>
-        <artifactId>maven-jaxb2-plugin</artifactId>
-        <version>0.14.0</version>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jaxb2-maven-plugin</artifactId>
+        <version>2.5.0</version>
         <executions>
           <execution>
             <id>generate-repositorysettings-classes</id>
             <goals>
-              <goal>generate</goal>
+              <goal>xjc</goal>
             </goals>
-            <phase>generate-sources</phase>
-            <configuration>
-              <schemaDirectory>${project.build.directory}/repositorysettings/xsd</schemaDirectory>
-              <generateDirectory>${project.build.directory}/generated-sources/repositorysettings</generateDirectory>
-              <generatePackage>org.bitrepository.settings.repositorysettings</generatePackage>
-              <extension>true</extension>
-              <args>
-                <arg>-XtoString</arg>
-                <arg>-Xequals</arg>
-                <arg>-XhashCode</arg>
-                <arg>-Xannotate</arg>
-              </args>
-              <plugins>
-                <plugin>
-                  <groupId>org.jvnet.jaxb2_commons</groupId>
-                  <artifactId>jaxb2-basics</artifactId>
-                  <version>0.11.1</version>
-                </plugin>
-                <plugin>
-                  <groupId>org.jvnet.jaxb2_commons</groupId>
-                  <artifactId>jaxb2-basics-annotate</artifactId>
-                  <version>1.1.0</version>
-                </plugin>
-              </plugins>
-            </configuration>
           </execution>
         </executions>
+        <configuration>
+          <sources>
+            <source>${project.build.directory}/repositorysettings/xsd/RepositorySettings.xsd</source>
+          </sources>
+          <xjbSources>
+            <xjbSource>${project.build.directory}/repositorysettings/xsd/bindings-repository-settings.xjb</xjbSource>
+          </xjbSources>
+          <outputDirectory>${project.build.directory}/generated-sources/repositorysettings</outputDirectory>
+          <extension>true</extension>
+          <arguments>
+            <argument>-XtoString</argument>
+            <argument>-Xequals</argument>
+            <argument>-XhashCode</argument>
+            <argument>-Xannotate</argument>
+          </arguments>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.jvnet.jaxb2_commons</groupId>
+            <artifactId>jaxb2-basics</artifactId>
+            <version>0.11.1</version>
+          </dependency>
+          <dependency>
+            <groupId>org.jvnet.jaxb2_commons</groupId>
+            <artifactId>jaxb2-basics-annotate</artifactId>
+            <version>1.1.0</version>
+          </dependency>
+        </dependencies>
       </plugin>
      </plugins> 
   </build>
