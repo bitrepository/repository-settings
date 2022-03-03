@@ -18,6 +18,22 @@
       <version>0.11.1</version>
     </dependency>
     <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <version>2.3.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+      <version>2.3.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jaxb</groupId>
+      <artifactId>jaxb-runtime</artifactId>
+      <version>3.0.1</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
       <groupId>org.bitrepository.repository-settings</groupId>
       <artifactId>bitrepository-repository-settings-xsd</artifactId>
       <version>${project.version}</version>
@@ -25,15 +41,6 @@
   </dependencies>
 
   <build>
-    <!-- <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>true</filtering>
-        <excludes>
-          <exclude>xsd/BitRepositoryElements.xsd</exclude>
-        </excludes>
-      </resource>
-    </resources> -->
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -53,6 +60,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.1.2</version>
         <executions>
           <execution>
             <id>Extract-xsd-files</id>
@@ -73,6 +81,7 @@
         <!-- Copies the jaxb bindings definition to the message xsd dir, 
           in preparation for the xsd -> java class file generation -->
         <artifactId>maven-resources-plugin</artifactId>
+        <version>3.2.0</version>
         <executions>
           <execution>
             <id>copy-resources</id>
@@ -93,42 +102,45 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.jvnet.jaxb2.maven2</groupId>
-        <artifactId>maven-jaxb2-plugin</artifactId>
-        <version>0.13.1</version>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jaxb2-maven-plugin</artifactId>
+        <version>2.5.0</version>
         <executions>
           <execution>
             <id>generate-repositorysettings-classes</id>
             <goals>
-              <goal>generate</goal>
+              <goal>xjc</goal>
             </goals>
-            <phase>generate-sources</phase>
-            <configuration>
-              <schemaDirectory>${project.build.directory}/repositorysettings/xsd</schemaDirectory>
-              <generateDirectory>${project.build.directory}/generated-sources/repositorysettings</generateDirectory>
-              <generatePackage>org.bitrepository.settings.repositorysettings</generatePackage>
-              <extension>true</extension>
-              <args>
-                <arg>-XtoString</arg>
-                <arg>-Xequals</arg>
-                <arg>-XhashCode</arg>
-                <arg>-Xannotate</arg>
-              </args>
-              <plugins>
-                <plugin>
-                  <groupId>org.jvnet.jaxb2_commons</groupId>
-                  <artifactId>jaxb2-basics</artifactId>
-                  <version>0.11.1</version>
-                </plugin>
-                <plugin>
-                  <groupId>org.jvnet.jaxb2_commons</groupId>
-                  <artifactId>jaxb2-basics-annotate</artifactId>
-                  <version>1.0.2</version>
-                </plugin>
-              </plugins>
-            </configuration>
           </execution>
         </executions>
+        <configuration>
+          <sources>
+            <source>${project.build.directory}/repositorysettings/xsd/RepositorySettings.xsd</source>
+          </sources>
+          <xjbSources>
+            <xjbSource>${project.build.directory}/repositorysettings/xsd/bindings-repository-settings.xjb</xjbSource>
+          </xjbSources>
+          <outputDirectory>${project.build.directory}/generated-sources/repositorysettings</outputDirectory>
+          <extension>true</extension>
+          <arguments>
+            <argument>-XtoString</argument>
+            <argument>-Xequals</argument>
+            <argument>-XhashCode</argument>
+            <argument>-Xannotate</argument>
+          </arguments>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.jvnet.jaxb2_commons</groupId>
+            <artifactId>jaxb2-basics</artifactId>
+            <version>0.11.1</version>
+          </dependency>
+          <dependency>
+            <groupId>org.jvnet.jaxb2_commons</groupId>
+            <artifactId>jaxb2-basics-annotate</artifactId>
+            <version>1.1.0</version>
+          </dependency>
+        </dependencies>
       </plugin>
      </plugins> 
   </build>
