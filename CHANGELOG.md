@@ -3,7 +3,11 @@ Changes of the Bitrepository.org repository settings.
 The change log covers changes in the specification from version 0.9 and newer. 
 Changes prior to version 0.9 have never been documented in a change log form. For references of changes prior to that look at the version control history.
 
-## [12] - Not released
+## [13] - 2022-03-09
+- Updated parent pom
+- Added jaxb dependencies to support java 11 and swapped old jaxb-maven-plugin for Mojohaus'
+
+## [12] - 2016-11-11
 ### Changed
 - Move change log from changes.xml to CHANGELOG.md @sbktc
 - Rename maven modules to be aligned with other bitrepository.org maven artifacts. @sbktc [BITMAG-1094](https://sbforge.org/jira/browse/BITMAG-1094)
