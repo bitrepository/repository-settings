@@ -9,7 +9,7 @@
 
   <groupId>org.bitrepository.repository-settings</groupId>
   <artifactId>bitrepository-repository-settings</artifactId>
-  <version>13-SNAPSHOT</version>
+  <version>13</version>
   <packaging>pom</packaging>
   <name>Bitrepository repository settings</name>
   <description>Contains the standard settings used to define a Bit Repository installation</description>
@@ -31,7 +31,7 @@
     <connection>scm:git:git@github.com:bitrepository/repository-settings.git</connection>
     <developerConnection>scm:git:git@github.com:bitrepository/repository-settings.git</developerConnection>
     <url>https://sbforge.org/fisheye/browse/bitrepository-repository-settings/</url>
-    <tag>HEAD</tag>
+    <tag>bitrepository-repository-settings-13</tag>
   </scm>
 
 
