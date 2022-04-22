@@ -7,7 +7,7 @@
     <version>22</version>
   </parent>
 
-  <groupId>org.bitrepository.repository-settings</groupId>
+  <groupId>org.bitrepository</groupId>
   <artifactId>bitrepository-repository-settings</artifactId>
   <version>14-SNAPSHOT</version>
   <packaging>pom</packaging>
