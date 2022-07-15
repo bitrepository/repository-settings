@@ -234,6 +234,7 @@
           <xs:annotation>
             <xs:documentation>
               The timeout for the actual operation in milliseconds.
+              Deprecated for removal, but currently still mandatory for backward compatibility.
             </xs:documentation>
           </xs:annotation>
         </xs:element>
