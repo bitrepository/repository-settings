@@ -216,19 +216,23 @@
             </xs:documentation>
           </xs:annotation>
         </xs:element>
-        <xs:element name="IdentificationTimeoutDuration" type="xs:duration" minOccurs="0" maxOccurs="1">
+        <xs:element name="IdentificationTimeoutDuration" minOccurs="0" maxOccurs="1">
           <xs:annotation>
             <xs:documentation>
               The timeout for the identification.
               If present, clients should prefer to respect this setting over IdentificationTimeout.
-              Non-negative XML schema durations are accepted, for example
-              PT2H (2 hours), PT3M (3 minutes), PT1H22M22.5S (1 hour 22 minutes 22.5 seconds),
-              P1Y3DT4H6.789S (1 year 3 days 4 hours 6.789 seconds).
-              Under no circumstances is the setting allowed to contain any negative part (component)
-              (so 59 seconds *cannot* be given as PT1M-1S; also -PT2M is *forbidden*).
-              At most 9 decimals on the seconds are allowed, and any client may support only coarser precision.
+              Non-negative XML schema durations consisting of hours, minutes and/or seconds are accepted.
+              The seconds may have up to 9 decimals of fraction.
+              Any client may support only coarser precision than 9 decimals.
+              For example PT2H (2 hours), PT3M (3 minutes), PT1H22M22.5S (1 hour 22 minutes 22.5 seconds).
+              The setting is not allowed to contain any minus sign (-PT2M is *forbidden*).
             </xs:documentation>
           </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:duration">
+              <xs:pattern value="PT(\d+H)?(\d+M)?(\d+(\.\d{1,9})?S)?" />
+            </xs:restriction>
+          </xs:simpleType>
         </xs:element>
         <xs:element name="OperationTimeout" type="xs:nonNegativeInteger">
           <xs:annotation>
@@ -238,19 +242,23 @@
             </xs:documentation>
           </xs:annotation>
         </xs:element>
-        <xs:element name="OperationTimeoutDuration" type="xs:duration" minOccurs="0" maxOccurs="1">
+        <xs:element name="OperationTimeoutDuration" minOccurs="0" maxOccurs="1">
           <xs:annotation>
             <xs:documentation>
               The timeout for the actual operation.
-              If present, clients should prefer to respect this setting over OperationTimeout.
-              Non-negative XML schema durations are accepted, for example
-              PT2H (2 hours), PT3M (3 minutes), PT1H22M22.5S (1 hour 22 minutes 22.5 seconds),
-              P1Y3DT4H6.789S (1 year 3 days 4 hours 6.789 seconds).
-              Under no circumstances is the setting allowed to contain any negative part (component)
-              (so 59 seconds *cannot* be given as PT1M-1S; also -PT2M is *forbidden*).
-              At most 9 decimals on the seconds are allowed, and any client may support only coarser precision.
+              If present, clients should prefer to respect this setting over IdentificationTimeout.
+              Non-negative XML schema durations consisting of hours, minutes and/or seconds are accepted.
+              The seconds may have up to 9 decimals of fraction.
+              Any client may support only coarser precision than 9 decimals.
+              For example PT2H (2 hours), PT3M (3 minutes), PT1H22M22.5S (1 hour 22 minutes 22.5 seconds).
+              The setting is not allowed to contain any minus sign (-PT2M is *forbidden*).
             </xs:documentation>
           </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:duration">
+              <xs:pattern value="PT(\d+H)?(\d+M)?(\d+(\.\d{1,9})?S)?" />
+            </xs:restriction>
+          </xs:simpleType>
         </xs:element>
       </xs:sequence>
     </xs:complexType>
