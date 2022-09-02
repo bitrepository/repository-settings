@@ -24,7 +24,6 @@
         <xs:element ref="GetAuditTrailSettings" minOccurs="0" />
         <xs:element ref="GetChecksumsSettings" minOccurs="0" />
         <xs:element ref="GetFileSettings" minOccurs="0" />
-        <xs:element ref="GetFileInfosSettings" minOccurs="0" />
         <xs:element ref="GetFileIDsSettings" minOccurs="0" />
         <xs:element ref="GetStatusSettings" minOccurs="0" />
         <xs:element ref="PutFileSettings" minOccurs="0" />
@@ -339,16 +338,6 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="GetFileInfosSettings">
-    <xs:complexType>
-      <xs:annotation>
-        <xs:documentation>
-          The settings for the GetFileInfosClient.
-        </xs:documentation>
-      </xs:annotation>
-    </xs:complexType>
-  </xs:element>
-
   <xs:element name="GetStatusSettings">
     <xs:complexType>
       <xs:annotation>
@@ -504,7 +493,6 @@
       <xs:enumeration value="PutFile" />
       <xs:enumeration value="GetChecksums" />
       <xs:enumeration value="GetFileIDs" />
-      <xs:enumeration value="GetFileInfos" />
       <xs:enumeration value="DeleteFile" />
       <xs:enumeration value="ReplaceFile" />
       <xs:enumeration value="GetAuditTrails" />
