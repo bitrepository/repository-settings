@@ -37,7 +37,7 @@
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>org.bitrepository.repository-settings</groupId>
+      <groupId>org.bitrepository</groupId>
       <artifactId>bitrepository-repository-settings-xsd</artifactId>
       <version>${project.version}</version>
     </dependency>
