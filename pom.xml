@@ -9,7 +9,7 @@
 
   <groupId>org.bitrepository</groupId>
   <artifactId>bitrepository-repository-settings</artifactId>
-  <version>15-SNAPSHOT</version>
+  <version>14-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Bitrepository repository settings</name>
   <description>Contains the standard settings used to define a Bit Repository installation</description>
