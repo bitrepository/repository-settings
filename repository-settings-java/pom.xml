@@ -2,12 +2,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bitrepository</groupId>
-    <artifactId>bitrepository-repository-settings</artifactId>
+    <groupId>org.bitrepository.repository-settings</groupId>
+    <artifactId>repository-settings</artifactId>
     <version>14-SNAPSHOT</version>
   </parent>
 
-  <artifactId>bitrepository-repository-settings-java</artifactId>
+  <artifactId>repository-settings-java</artifactId>
   <name>Bitrepository repository settings auto generated java classes </name>
   <description>Contains the standard settings used to define a Bit Repository installation</description>
 
@@ -37,8 +37,8 @@
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>org.bitrepository</groupId>
-      <artifactId>bitrepository-repository-settings-xsd</artifactId>
+      <groupId>org.bitrepository.repository-settings</groupId>
+      <artifactId>repository-settings-xsd</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>
@@ -72,8 +72,8 @@
             </goals>
             <phase>generate-sources</phase>
             <configuration>
-              <includeGroupIds>org.bitrepository</includeGroupIds>
-              <includeArtifactIds>bitrepository-repository-settings-xsd</includeArtifactIds>
+              <includeGroupIds>org.bitrepository.repository-settings</includeGroupIds>
+              <includeArtifactIds>repository-settings-xsd</includeArtifactIds>
               <includes>xsd/*.xsd</includes>
               <outputDirectory>${project.build.directory}/repositorysettings</outputDirectory>
             </configuration>

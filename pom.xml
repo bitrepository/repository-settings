@@ -7,16 +7,16 @@
     <version>23</version>
   </parent>
 
-  <groupId>org.bitrepository</groupId>
-  <artifactId>bitrepository-repository-settings</artifactId>
+  <groupId>org.bitrepository.repository-settings</groupId>
+  <artifactId>repository-settings</artifactId>
   <version>14-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Bitrepository repository settings</name>
   <description>Contains the standard settings used to define a Bit Repository installation</description>
 
   <modules>
-    <module>bitrepository-repository-settings-xsd</module>
-    <module>bitrepository-repository-settings-java</module>
+    <module>repository-settings-xsd</module>
+    <module>repository-settings-java</module>
   </modules>
 
   <licenses>

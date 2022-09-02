@@ -2,12 +2,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bitrepository</groupId>
-    <artifactId>bitrepository-repository-settings</artifactId>
+    <groupId>org.bitrepository.repository-settings</groupId>
+    <artifactId>repository-settings</artifactId>
     <version>14-SNAPSHOT</version>
   </parent>
 
-  <artifactId>bitrepository-repository-settings-xsd</artifactId>
+  <artifactId>repository-settings-xsd</artifactId>
   <name>Bitrepository repository settings definitions</name>
   <description>Contains the standard settings used to define a Bit Repository installation</description>
 
