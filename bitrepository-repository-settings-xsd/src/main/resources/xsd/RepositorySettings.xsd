@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Version ${project.version} -->
 <xs:schema targetNamespace="http://bitrepository.org/settings/RepositorySettings.xsd"
-  attributeFormDefault="unqualified" elementFormDefault="qualified" 
+           attributeFormDefault="unqualified" elementFormDefault="qualified"
 
-  xmlns="http://bitrepository.org/settings/RepositorySettings.xsd"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+           xmlns="http://bitrepository.org/settings/RepositorySettings.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
 
   <xs:element name="RepositorySettings">
     <xs:annotation>
@@ -60,13 +60,13 @@
             <xs:documentation> The human readable name of the collection.</xs:documentation>
           </xs:annotation>
         </xs:element>
-          <xs:element ref="PillarIDs">
-            <xs:annotation>
-              <xs:documentation>
-                List of the pillars contributing to the collection.
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
+        <xs:element ref="PillarIDs">
+          <xs:annotation>
+            <xs:documentation>
+              List of the pillars contributing to the collection.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -82,7 +82,7 @@
   <xs:element name="ProtocolSettings">
     <xs:complexType>
       <xs:annotation>
-        <xs:documentation>The settings for the org.bitrepository.org.bitrepository.protocol</xs:documentation>
+        <xs:documentation>The settings for the org.bitrepository protocol</xs:documentation>
       </xs:annotation>
       <xs:sequence>
         <xs:element name="DefaultChecksumType" type="xs:string">
@@ -94,7 +94,7 @@
           </xs:annotation>
         </xs:element>
         <xs:element name="AllowedFileIDPattern" type="xs:string">
-          <xs:annotation> 
+          <xs:annotation>
             <xs:documentation>
               Regular expression describing the allowed fileIDs in the collection.
             </xs:documentation>
@@ -104,10 +104,10 @@
           <xs:annotation>
             <xs:documentation xml:lang="en">
               Require components to authenticate any messages upon reception.
-              The implies that all messages has to be signed by sender. 
+              The implies that all messages has to be signed by sender.
             </xs:documentation>
           </xs:annotation>
-        </xs:element>    
+        </xs:element>
         <xs:element name="RequireOperationAuthorization" type="xs:boolean">
           <xs:annotation>
             <xs:documentation xml:lang="en">
@@ -120,7 +120,7 @@
           <xs:annotation>
             <xs:documentation xml:lang="en">
               Require a checksum for pillar verification when requesting a destructive operation.
-              I.e. require the provision of a checksum and specification when requesting the 
+              I.e. require the provision of a checksum and specification when requesting the
               replacement or deletion of a file.
             </xs:documentation>
           </xs:annotation>
@@ -128,8 +128,8 @@
         <xs:element name="RequireChecksumForNewFileRequests" type="xs:boolean">
           <xs:annotation>
             <xs:documentation xml:lang="en">
-              Require a checksum when requesting a new file in the collection. 
-              This also covers the new file in a replace request. 
+              Require a checksum when requesting a new file in the collection.
+              This also covers the new file in a replace request.
             </xs:documentation>
           </xs:annotation>
         </xs:element>
@@ -150,7 +150,7 @@
         <xs:element name="PillarDestination" type="xs:string" minOccurs="0">
           <xs:annotation>
             <xs:documentation xml:lang="en">
-              The destination for broadcast messages to pillars. I.e. the Identify requests. If this issen't defined
+              The destination for broadcast messages to pillars. I.e. the Identify requests. If this isn't defined
               the general CollectionDestination is used
             </xs:documentation>
           </xs:annotation>
@@ -159,7 +159,7 @@
           <xs:annotation>
             <xs:documentation xml:lang="en">
               The destination for broadcast messages to audit trail contributors. I.e. the Identify requests. If this
-              isen't defined the general CollectionDestination is used.
+              isn't defined the general CollectionDestination is used.
             </xs:documentation>
           </xs:annotation>
         </xs:element>
@@ -266,11 +266,11 @@
     </xs:complexType>
   </xs:element>
 
-    <xs:element name="PillarSettings">
+  <xs:element name="PillarSettings">
     <xs:complexType>
       <xs:annotation>
         <xs:documentation xml:lang="en">
-            The settings for the org.bitrepository.org.bitrepository.protocol
+          The settings for the org.bitrepository protocol
         </xs:documentation>
       </xs:annotation>
       <xs:sequence>
@@ -299,7 +299,7 @@
         <xs:element name="NonPillarContributorIDs" type="xs:string" minOccurs="0" maxOccurs="unbounded">
           <xs:annotation>
             <xs:documentation>
-              List of IDs of the components that should respond to GetAuditTrail, beside the pillars 
+              List of IDs of the components that should respond to GetAuditTrail, beside the pillars
               of the respective collections.
             </xs:documentation>
           </xs:annotation>
@@ -419,7 +419,7 @@
             </xs:documentation>
           </xs:annotation>
         </xs:element>
-         <xs:element name="OperationPermission" type="OperationPermission" minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OperationPermission" type="OperationPermission" minOccurs="0" maxOccurs="unbounded">
           <xs:annotation>
             <xs:documentation xml:lang="en">
               Defines the operation (or operation set) the entity may perform.
@@ -429,16 +429,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:complexType name="ComponentIDs">
     <xs:sequence>
       <xs:element name="IDs" type="xs:string" minOccurs="1" maxOccurs="unbounded">
-          <xs:annotation>
-            <xs:documentation>
-              Defines the list of allowed components.
-            </xs:documentation>
-          </xs:annotation>
-        </xs:element>
+        <xs:annotation>
+          <xs:documentation>
+            Defines the list of allowed components.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
 
@@ -451,7 +451,7 @@
     <xs:sequence>
       <xs:element name="CertificateData">
         <xs:simpleType>
-          <xs:restriction base="xs:base64Binary"/>  
+          <xs:restriction base="xs:base64Binary"/>
         </xs:simpleType>
       </xs:element>
       <xs:element name="AllowedCertificateUsers" type="ComponentIDs" minOccurs="0" maxOccurs="1">
@@ -460,7 +460,7 @@
             Defines which components are allowed to use the certificate. If no restrictions apply, leave out the element.
           </xs:documentation>
         </xs:annotation>
-      </xs:element>    
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
 
@@ -475,12 +475,12 @@
       <xs:enumeration value="MessageBusServer" />
       <xs:enumeration value="FileExchangeClient" />
       <xs:enumeration value="FileExchangeServer" />
-      <xs:enumeration value="MessageSigner"> 
+      <xs:enumeration value="MessageSigner">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             MessageSigner InfrastructurePermission is implicitly given when a set of OperationPermission
             is provided for a certificate. It would make no sense that a certificate will allow an operation
-            but not allowed to sign a message so the certificate can be identified. 
+            but not allowed to sign a message so the certificate can be identified.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -508,14 +508,14 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-     <xs:element name="Operation" type="Operation"> </xs:element>
-     <xs:element name="AllowedComponents" type="ComponentIDs" minOccurs="0" maxOccurs="1">
-       <xs:annotation>
-         <xs:documentation xml:lang="en">
-           The list of components where this permission applies. If the list is not present, the permission applies for all. 
-         </xs:documentation>
-       </xs:annotation>
-     </xs:element>
+      <xs:element name="Operation" type="Operation"> </xs:element>
+      <xs:element name="AllowedComponents" type="ComponentIDs" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The list of components where this permission applies. If the list is not present, the permission applies for all.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="Collections" type="xs:string" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation xml:lang="en">
@@ -524,6 +524,6 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-   </xs:sequence>
+    </xs:sequence>
   </xs:complexType>
 </xs:schema>
