@@ -8,7 +8,7 @@
   </parent>
 
   <groupId>org.bitrepository.repository-settings</groupId>
-  <artifactId>repository-settings</artifactId>
+  <artifactId>repository-settings</artifactId> <!-- TODO append '-parent' -->
   <version>15-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Bitrepository repository settings</name>
